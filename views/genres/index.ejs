@@ -1,0 +1,14 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Genre!</h1>
+  <h2>All the Genre!</h2>
+	<ul>
+  <% genre.forEach(genre => { %>
+    <li><%= genre.name %> is <%= genre.liked ? 'liked' : 'not liked' %></li>
+  <% }) %>
+  </ul>
+</section>
+
+<%- include('../partials/footer') %>
