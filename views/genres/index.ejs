@@ -3,6 +3,20 @@
 
 <section>
   <h1>Genre!</h1>
+  <% if (user) { %>
+    <h2>Add a Genre!</h2>
+    <form action="/genres" method="POST">
+      <label>
+        Name: 
+        <input type="text" name="name" autocomplete="off">
+      </label>
+      <label>
+        Liked?
+        <input type="checkbox" name="liked">
+      </label>
+      <button type="submit">Add Genre</button>
+    </form>
+  <% } %>
   <h2>All the Genre!</h2>
 	<ul>
   <% genre.forEach(genre => { %>

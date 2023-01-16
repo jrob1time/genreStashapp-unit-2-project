@@ -14,6 +14,36 @@ function index(req, res) {
   })
 }
 
+function create(req, res) {
+  req.body.owner = req.user.profile._id
+	req.body.liked = !!req.body.liked
+  Genre.create(req.body)
+  .then(genre => {
+    res.redirect('/genres')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/genres')
+  })
+}
+
+function show(req, res) {
+  Genre.findById(req.params.id)
+  .populate("owner")
+  .then(genre => {
+    res.render('genres/show', {
+      genre,
+      title: "genre show"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/genres')
+  })
+}
+
 export {
-  index
+  index,
+  create,
+  show
 }
