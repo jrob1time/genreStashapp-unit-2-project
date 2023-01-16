@@ -8,6 +8,7 @@ router.get('/', genresCtrl.index)
 router.get('/:id', genresCtrl.show)
 router.post('/', genresCtrl.create)
 router.post('/', isLoggedIn, genresCtrl.create)
+router.patch('/:id/flip-liked', isLoggedIn, genresCtrl.flipLiked)
 
 export {
   router

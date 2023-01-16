@@ -5,6 +5,16 @@
 	<p>Added by <%= genre.owner.name %>...</p>
   <h1><%= genre.name %> 🌮</h1>
   <h2>This genre is <%= genre.liked ? 'liked!' : 'not liked!' %></h2>
+	<% if (user) { %>
+    <form 
+      action="/genres/<%= genre._id %>/flip-liked?_method=PATCH" 
+      method="POST"
+    >
+      <button class="btn" type="submit">
+        Make genre <%= genre.liked ? 'not liked' : 'liked' %>
+      </button>
+    </form>
+  <% } %>
 </section>
 
 <%- include('../partials/footer') %>
