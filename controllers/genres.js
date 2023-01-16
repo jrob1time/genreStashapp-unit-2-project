@@ -42,20 +42,7 @@ function show(req, res) {
   })
 }
 
-function flipLiked(req, res) {
-  Genre.findById(req.params.id)
-  .then(genre => {
-    genre.liked = !genre.liked
-    genre.save()
-    .then(()=> {
-      res.redirect(`/genres/${genre._id}`)
-    })
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect('/genres')
-  })
-}
+
 
 
 
@@ -63,5 +50,4 @@ export {
   index,
   create,
   show,
-  flipLiked
 }
