@@ -1,0 +1,57 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <div>
+    <img 
+      class="profile-avatar"
+      src="<%= profile.avatar %>" 
+      alt="<%= profile.name %>'s avatar"
+    >
+  </div>
+  <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
+  <% if (isSelf)  {%> 
+    <h2>Add A Genre!</h2>
+    <form action="/profiles/<%= profile._id %>/artists" method="POST">
+      <label>
+        Genre: 
+        <input type="text" name="name" autocomplete="off">
+      </label>
+      <label>
+        Artist Refernce: 
+        <input type="number" name="artistReference" autocomplete="off">
+      </label>
+      <label>
+        Album Reference: 
+        <input type="text" name="albumReference" autocomplete="off">
+      </label>
+      <button type="submit">Add Genre</button>
+    </form>
+  <% } %>
+  <% if (profile.artists.length)  {%>
+    <h2>
+      <%= isSelf ? "You have" : `${profile.name} has` %> Genres! Here they are!
+    </h2>
+    <% profile.artists.forEach(artist => { %>
+      <h3>
+        <%= getRandomArtist() %> 
+        <%= artist.name %> is a performed by <%= artist.artistReference %> and is display in the album <%= artist.albumReference %>.
+        <% if (isSelf) { %> 
+          <form 
+            action="/profiles/artists/<%= artist._id %>?_method=DELETE" 
+            method="POST"
+            style="display: inline-block;"
+          >
+            <button type="submit">😸 Free <%= artist.name %></button>
+          </form>
+        <% } %>
+      </h3>
+    <% }) %>
+  <% } else { %>
+    <h2>
+      <%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any genres yet!
+    </h2> 
+  <% } %>
+</main>
+
+<%- include('../partials/footer') %>

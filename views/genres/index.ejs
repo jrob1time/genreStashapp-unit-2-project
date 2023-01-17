@@ -3,26 +3,43 @@
 
 <section>
   <h1>Genres!</h1>
-    <% if (user) { %>
-      <h2>Add a Genre!</h2>
-      <form action="/genres" method="POST">
-        <label>
-          Name: 
-          <input type="text" name="name" autocomplete="off">
-        <label>
-          Liked?
-          <input type="checkbox" name="liked">
-        </label>
-        <button type="submit">Add Genre</button>
-      </form>
-    <% } %>
+  <% if (user) { %>
+    <form action="/genres" method="POST">
+      <label>
+        Name:
+        <input type="text" name="name" autocomplete="off">
+      </label>
+      <label>
+        Location Origin:
+        <input type="text" name="locationOrigin" autocomplete="off">
+      </label>
+      <label>
+        Year Recognized:
+        <input type="text" name="yearRecognized" autocomplete="off">
+      </label>
+      <label>
+        Parent Genre:
+        <input type="text" name="parentGenre" autocomplete="off">
+      </label>
+      <label>
+        Liked?
+        <input type="checkbox" name="liked">
+      </label>
+      <button type="submit">Add Genre</button>
+    </form>
+  <% } %>
   <h2>All Genres!</h2>
 	<ul>
-  <% genre.forEach(genre => { %>
-    <li><%= genre.name %> is <%= genre.liked ? 'liked' : 'not liked' %></li>
+  <% genres.forEach(genre => { %>
+    <tr>
+      <li>Genre: <%= genre.name %></li>
+      <li>Location Origin: <%= genre.locationOrigin%></li>
+      <li>Year Recognized: <%= genre.yearRecognized %></li>
+      <li>Parent Genre: <%= genre.parentGenre %></li>
+      <li><a href="/genres/<%= genre._id %>">DETAILS</a></li>
+      <li>
   <% }) %>
   </ul>
 </section>
-
 
 <%- include('../partials/footer') %>

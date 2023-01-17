@@ -1,0 +1,31 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Edit The Genre!</h1>
+  <form 
+    action="/genres/<%= genre._id %>?_method=PUT"
+    method="POST"
+  >
+    <label>
+      Name:
+      <input 
+        type="text"
+        name="name" 
+        value="<%= genre.name %>" 
+        autocomplete="off"
+      >
+    </label>
+    <label>
+      Liked?
+      <input 
+        type="checkbox" 
+        name="liked" 
+        <%= genre.liked ? "checked" : "" %> 
+      >
+    </label>
+    <button type="submit">Edit The Genre</button>
+  </form>
+</section>
+
+<%- include('../partials/footer') %>

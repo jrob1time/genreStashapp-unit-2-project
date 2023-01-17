@@ -2,17 +2,43 @@
 <%- include('../partials/nav') %>
 
 <section>
-	<p>Added by <%= genre.owner.name %>...</p>
-  <h1><%= genre.name %>Genre</h1>
+  <p>Added by <%= genre.owner.name %>...</p>
+  <h1><%= genre.name %></h1>
   <h2>This genre is <%= genre.liked ? 'liked!' : 'not liked!' %></h2>
-	<% if (user) { %>
+  <% genre.comments?.forEach(comment => { %>
+    <p>
+      <%= comment.content %> - <%= comment.commenter.name %>
+      <% if (comment.commenter._id.equals(user?.profile._id)) { %>
+        <form action="/genres/<%= genre._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+          <button>Delete</button>
+        </form>
+        <a href="/genres/<%= genre._id %>/comments/<%= comment._id %>/edit" class="btn">Update</a>
+      <% } %> 
+    </p> 
+  <% }) %>
+  <form action="/genres/<%= genre._id %>/comments" method="POST">
+    <textarea name="content"></textarea><br>
+    <button>Add Comment</button>
+  </form>
+  <% if (user) { %>
     <form 
-      action="/genres/<%= genre._id %>/flip-liked?_method=PATCH" 
+      action="/genres/<%= genre._id %>/flip-liked?_method=PATCH"
       method="POST"
     >
       <button class="btn" type="submit">
-        Make genre <%= genre.liked ? 'not liked' : 'liked' %>
+        Make Genre <%= genre.liked ? 'not liked' : 'liked' %> 
       </button>
+    </form>
+  <% } %>
+  <% if (genre.owner.equals(user?.profile._id)) { %>
+    <a href="/genres/<%= genre._id %>/edit">
+      <button class="btn">Edit This Genre</button>
+    </a>
+    <form 
+      action="/genres/<%= genre._id %>?_method=DELETE"
+      method="POST"
+    >
+      <button class="btn" type="submit">Delete This Genre</button>
     </form>
   <% } %>
 </section>
