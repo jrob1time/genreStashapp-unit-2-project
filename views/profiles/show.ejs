@@ -34,7 +34,6 @@
     </h2>
     <% profile.artists.forEach(artist => { %>
       <h3>
-        <%= getRandomArtist() %> 
         <%= artist.name %> is a performed by <%= artist.artistReference %> and is display in the album <%= artist.albumReference %>.
         <% if (isSelf) { %> 
           <form 
@@ -42,7 +41,7 @@
             method="POST"
             style="display: inline-block;"
           >
-            <button type="submit">😸 Free <%= artist.name %></button>
+            <button type="submit"> Delete <%= artist.name %></button>
           </form>
         <% } %>
       </h3>

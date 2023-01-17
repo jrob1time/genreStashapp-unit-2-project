@@ -2,7 +2,7 @@
 <%- include('../partials/nav') %>
 
 <section>
-  <h1>Edit your comment!</h1>
+  <h1>Edit your artist!</h1>
   <form 
     action="/genres/<%= genre._id %>/comments/<%= comment._id %>?_method=PUT"
     method="POST"
@@ -17,7 +17,7 @@
         autocomplete="off"
       ><%= comment.content %></textarea>
     </label>
-    <button type="submit">Update Comment</button>
+    <button type="submit">Update Artist</button>
   </form>
 </section>
 
