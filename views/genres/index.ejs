@@ -2,7 +2,7 @@
 <%- include('../partials/nav') %>
 
 <section>
-  <h1>Genres!</h1>
+  <h1>Add Genre!</h1>
   <% if (user) { %>
     <form action="/genres" method="POST">
       <label>
@@ -36,7 +36,9 @@
       <li>Location Origin: <%= genre.locationOrigin%></li>
       <li>Year Recognized: <%= genre.yearRecognized %></li>
       <li>Parent Genre: <%= genre.parentGenre %></li>
-      <li><a href="/genres/<%= genre._id %>">DETAILS</a></li>
+      <li>
+        <a href="/genres/<%= genre._id %>"><%= genre.name %></a> is <%= genre.liked ? 'liked' : 'not liked' %>
+      </li>
       <li>
   <% }) %>
   </ul>

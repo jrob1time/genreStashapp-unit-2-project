@@ -2,7 +2,7 @@
 <%- include('../partials/nav') %>
 
 <section>
-  <p>Added by <%= genre.owner.name %>...</p>
+  <p>Genre Info <%= genre.owner %></p>
   <h1><%= genre.name %></h1>
   <h2>This genre is <%= genre.liked ? 'liked!' : 'not liked!' %></h2>
   <% genre.comments?.forEach(comment => { %>
@@ -30,7 +30,7 @@
       </button>
     </form>
   <% } %>
-  <% if (genre.owner.equals(user?.profile._id)) { %>
+  <% if (genre.equals(user?.profile._id)) { %>
     <a href="/genres/<%= genre._id %>/edit">
       <button class="btn">Edit This Genre</button>
     </a>

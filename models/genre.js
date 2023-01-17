@@ -13,6 +13,7 @@ const genreSchema = new Schema({
   yearRecognized: String,
   liked: Boolean,
   parentGenre: [String],
+  owner: {type: Schema.Types.ObjectId, ref: "Profile"},
   comments: [commentSchema]
 })
 

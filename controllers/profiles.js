@@ -23,10 +23,6 @@ function show(req, res) {
       title: ` ${profile.name}'s profile`,
       profile,
       isSelf,
-      getRandomArtist: () => {
-        const artists = ["🐈", "🐱", "😸", "😹", "😺", "😻", "😼", "😾", "🙀"]
-        return artists[Math.floor(Math.random() * artists.length)]
-      }
     })
   })
   .catch((err) => {
