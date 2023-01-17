@@ -33,17 +33,10 @@
 	<ul>
   <% genre.forEach(genre => { %>
     <li><%= genre.name %> is <%= genre.liked ? 'liked' : 'not liked' %></li>
+    <li><%= genre.locationOrigin%></li>
+    <li><%= genre.yearRecognized%></li>
+    <li><%= genre.parentGenre%></li>
   <% }) %>
-  </ul>
-  <ul>
-    <% genre.forEach(genre => { %>
-      <li><%= genre.yearRecognized%></li>
-    <% }) %>
-  </ul>
-  <ul>
-    <% genre.forEach(genre => { %>
-      <li><%= genre.parentGenre%></li>
-    <% }) %>
   </ul>
 </section>
 
