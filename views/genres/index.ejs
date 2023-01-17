@@ -11,6 +11,18 @@
         <input type="text" name="name" autocomplete="off">
       </label>
       <label>
+        Location Origin: 
+        <input type="text" name="locationOrigin" autocomplete="off">
+      </label>
+      <label>
+        Year Recognized: 
+        <input type="text" name="yearRecognized" autocomplete="off">
+      </label>
+      <label>
+        Parent Genre: 
+        <input type="text" name="parentGenre" autocomplete="off">
+      </label>
+      <label>
         Liked?
         <input type="checkbox" name="liked">
       </label>
@@ -22,6 +34,21 @@
   <% genre.forEach(genre => { %>
     <li><%= genre.name %> is <%= genre.liked ? 'liked' : 'not liked' %></li>
   <% }) %>
+  </ul>
+  <ul>
+    <% genre.forEach(genre => { %>
+      <li><%= genre.locationOrigin %></li>
+    <% }) %>
+  </ul>
+  <ul>
+    <% genre.forEach(genre => { %>
+      <li><%= genre.yearRecognized%></li>
+    <% }) %>
+  </ul>
+  <ul>
+    <% genre.forEach(genre => { %>
+      <li><%= genre.parentGenre%></li>
+    <% }) %>
   </ul>
 </section>
 
