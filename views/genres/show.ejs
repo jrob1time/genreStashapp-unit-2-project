@@ -8,6 +8,7 @@
   <% if (user) { %>
   <% genre.comments?.forEach(comment => { %>
     <p>
+      <h3>Artist Examples</h3>
       <%= comment.content %> - <%= comment.commenter.name %>
       <% if (comment.commenter._id.equals(user?.profile._id)) { %>
         <form action="/genres/<%= genre._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
@@ -21,7 +22,22 @@
     <textarea name="content"></textarea><br>
     <button>Add Realted Artists</button>
   </form>
-
+    <% genre.comments?.forEach(comment => { %>
+      <p>
+        <h3>Album Examples</h3>
+        <%= comment.content %> - <%= comment.commenter.name %>
+        <% if (comment.commenter._id.equals(user?.profile._id)) { %>
+          <form action="/genres/<%= genre._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+            <button>Delete</button>
+          </form>
+          <a href="/genres/<%= genre._id %>/comments/<%= comment._id %>/edit" class="btn">Update</a>
+        <% } %> 
+      </p> 
+    <% }) %>
+    <form action="/genres/<%= genre._id %>/comments" method="POST">
+      <textarea name="content"></textarea><br>
+      <button>Add Realted Albums</button>
+    </form>
     <form 
       action="/genres/<%= genre._id %>/flip-liked?_method=PATCH"
       method="POST"

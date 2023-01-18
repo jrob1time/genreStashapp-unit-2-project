@@ -11,7 +11,7 @@
   </div>
   <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
   <% if (isSelf)  {%> 
-    <h2>Add A Genre & Artist!</h2>
+    <h2>Add A Genre & Reference!</h2>
     <form action="/profiles/<%= profile._id %>/artists" method="POST">
       <label>
         Genre: 
