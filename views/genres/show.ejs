@@ -11,8 +11,8 @@
     <li>Parent Genre: <%= genre.parentGenre %></li>
   </p>
   <h2>This genre is <%= genre.liked ? 'liked!' : 'not liked!' %></h2>
-  <h3>Artist Examples</h3>
   <% if (user) { %>
+    <h3>Artist Examples</h3>
   <% genre.comments?.forEach(comment => { %>
     <p>
       <%= comment.content %> - <%= comment.commenter.name %>
