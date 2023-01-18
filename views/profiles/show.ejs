@@ -11,7 +11,7 @@
   </div>
   <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
   <% if (isSelf)  {%> 
-    <h2>Add A Genre & Reference!</h2>
+    <h2>Add Genre Reference!</h2>
     <form action="/profiles/<%= profile._id %>/artists" method="POST">
       <label>
         Genre: 
@@ -34,7 +34,11 @@
     </h2>
     <% profile.artists.forEach(artist => { %>
       <h3>
-        <%= artist.name %> is a performed by <%= artist.artistReference %> and is display in their album <%= artist.albumReference %>.
+        <p> 
+          <li>Genre: <%= artist.name %></li>
+          <li>Artist Reference: <%= artist.artistReference%></li>
+          <li>Album Reference: <%= artist.albumReference %></li>
+        </p>
         <% if (isSelf) { %> 
           <form 
             action="/profiles/artists/<%= artist._id %>?_method=DELETE" 
@@ -54,3 +58,4 @@
 </main>
 
 <%- include('../partials/footer') %>
+

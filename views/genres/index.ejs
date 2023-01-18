@@ -31,12 +31,12 @@
   <h2>All Genres!</h2>
 	<ul>
   <% genres.forEach(genre => { %>
-    <tr>
+    <p> 
       <li>Genre: <%= genre.name %></li>
       <li>Location Origin: <%= genre.locationOrigin%></li>
       <li>Year Recognized: <%= genre.yearRecognized %></li>
       <li>Parent Genre: <%= genre.parentGenre %></li>
-      <li>
+    </p>
         <a href="/genres/<%= genre._id %>"><%= genre.name %></a> is <%= genre.liked ? 'liked' : 'not liked' %>
       </li>
       <li>

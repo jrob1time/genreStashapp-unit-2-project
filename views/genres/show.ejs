@@ -3,44 +3,31 @@
 
 <section>
   <h1><%= genre.name %></h1>
+  <p>Genre Info <%= genre.owner %></p>
+  <p> 
+    <li>Genre: <%= genre.name %></li>
+    <li>Location Origin: <%= genre.locationOrigin%></li>
+    <li>Year Recognized: <%= genre.yearRecognized %></li>
+    <li>Parent Genre: <%= genre.parentGenre %></li>
+  </p>
   <h2>This genre is <%= genre.liked ? 'liked!' : 'not liked!' %></h2>
-    <p>Genre Information <%= genre.owner %></p>
-      <li>Location Origin: <%= genre.locationOrigin%></li>
-      <li>Year Recognized: <%= genre.yearRecognized %></li>
-      <li>Parent Genre: <%= genre.parentGenre %></li>
+  <h3>Artist Examples</h3>
   <% if (user) { %>
   <% genre.comments?.forEach(comment => { %>
     <p>
-      <h3>Artist Examples</h3>
-      <p><%= comment.content %></p>
+      <%= comment.content %> - <%= comment.commenter.name %>
       <% if (comment.commenter._id.equals(user?.profile._id)) { %>
-        <form action="/genres/<%= genre._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
-          <button>Delete</button>
-        </form>
-        <a href="/genres/<%= genre._id %>/comments/<%= comment._id %>/edit" class="btn">Update</a>
       <% } %> 
+      <form action="/genres/<%= genre._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+        <button>Delete</button>
+      </form>
+      <a href="/genres/<%= genre._id %>/comments/<%= comment._id %>/edit" class="btn">Update</a>
     </p> 
   <% }) %>
   <form action="/genres/<%= genre._id %>/comments" method="POST">
     <textarea name="content"></textarea><br>
     <button>Add Realted Artists</button>
   </form>
-    <% genre.comments?.forEach(comment => { %>
-      <p>
-        <h3>Album Examples</h3>
-        <p><%= comment.content %></p>
-        <% if (comment.commenter._id.equals(user?.profile._id)) { %>
-          <form action="/genres/<%= genre._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
-            <button>Delete</button>
-          </form>
-          <a href="/genres/<%= genre._id %>/comments/<%= comment._id %>/edit" class="btn">Update</a>
-        <% } %> 
-      </p> 
-    <% }) %>
-    <form action="/genres/<%= genre._id %>/comments" method="POST">
-      <textarea name="content"></textarea><br>
-      <button>Add Realted Albums</button>
-    </form>
     <form 
       action="/genres/<%= genre._id %>/flip-liked?_method=PATCH"
       method="POST"
