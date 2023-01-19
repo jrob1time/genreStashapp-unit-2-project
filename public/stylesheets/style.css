@@ -55,9 +55,9 @@ ul {
   list-style-type: none;
 }
 
-/* p, label, li, button, input {
+p, label, li, button, input {
   font-size: 18px;
-} */
+}
 
 label {
   font-weight: bold;
@@ -117,22 +117,4 @@ form * {
   padding: 5px;
   border-radius: 5px;
   font-size: 20px;
-}
-
-#add-review-form {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 16px;
-  margin-bottom: 20px;
-}
-
-#add-review-form > textarea {
-  width: 250px;
-}
-
-#add-review-form > button {
-  font-size: 16px;
-  width: 160px;
-  grid-column: 2 / 3;
-  margin-bottom: 24px;
 }

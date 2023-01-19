@@ -17,9 +17,13 @@ h3 {
   text-align: center;
 }
 
-form {
+#genre {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 250px;
 }
 
 a { 
