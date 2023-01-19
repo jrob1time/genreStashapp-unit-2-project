@@ -2,7 +2,7 @@
 <%- include('../partials/nav') %>
 
 <section>
-  <h1>Add Genre!</h1>
+  <h1>Add A Genre!</h1>
   <% if (user) { %>
     <form action="/genres" method="POST">
       <label>
@@ -28,12 +28,11 @@
       <button type="submit">Add Genre</button>
     </form>
   <% } %>
-  <h2>All Genres!</h2>
+  <h2>ALL GENRES</h2>
 	<ul>
   <% genres.forEach(genre => { %>
-        <a href="/genres/<%= genre._id %>"><%= genre.name %></a> is <%= genre.liked ? 'liked' : 'not liked' %>
+        <a href="/genres/<%= genre._id %>"><%= genre.name %></a> is <%= genre.liked ? 'liked' : 'not liked'%>
       </li>
-      <li>
   <% }) %>
   </ul>
 </section>
