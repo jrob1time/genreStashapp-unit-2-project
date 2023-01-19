@@ -109,12 +109,16 @@ img{
 
 form > button {
   width: 160px;
-  margin: auto;
   font-size: 18px;
+  margin-left: 35px;
+  margin: 30px;
 }
 
 form * {
   padding: 5px;
   border-radius: 5px;
   font-size: 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
