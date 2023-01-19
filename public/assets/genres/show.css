@@ -1,0 +1,64 @@
+h1 {
+font-size:xxx-large;
+border-radius: 50px;
+margin: 6px;
+align-items: center;
+text-align: center;
+}
+
+h2 {
+  font-size:xx-large;
+  border-radius: 50px;
+  margin: 6px;
+  text-align: center;
+  }
+
+h3 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+a { 
+  text-align: center;
+  display: block;
+}
+
+p {
+  text-align: center;
+}
+
+li {
+  text-align: center;
+}
+
+  form {
+  margin: 30px;
+  padding-top: 20px;
+  }
+
+  label {
+  display: flex;
+  flex-direction: row;
+  }
+
+
+  ul{
+  margin-right: 50px;
+  text-align: center;
+  }
+
+button {
+    justify-content: center;
+    align-items: center;
+  }
+div {
+  border-color: white;
+}
+
+  .card-title {
+color: black
+  }
