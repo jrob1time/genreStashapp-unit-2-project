@@ -3,7 +3,7 @@
 
 
 <main>
-  <h1>Genre Stash <%= user ? user.profile.name : "App" %></h1>
+  <h3><%= user ? user.profile.name : "" %></h3>
   <% if (user?.profile.avatar) { %>
     <div>
       <img
@@ -12,6 +12,10 @@
       />
     </div>
   <% } %>
+  <p>Build your music genre knowlegde while 
+    keeping track of your favorite artists 
+    & albums in those genres.</p>
 </main>
 
 <%- include('./partials/footer') %>
+
