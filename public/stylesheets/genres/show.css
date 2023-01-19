@@ -10,10 +10,26 @@ h2 {
   font-size:xx-large;
   border-radius: 50px;
   margin: 6px;
-  align-items: center;
   text-align: center;
   }
 
+  form {
+  margin: 30px;
+  padding-top: 20px;
+  }
+
   label {
+  display: flex;
+  flex-direction: column;
+  }
+
+
+  ul{
+  margin: 6px;
+  text-align: center;
+  }
+
+.section > button {
+    justify-content: center;
     align-items: center;
   }
