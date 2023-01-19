@@ -1,6 +1,6 @@
 # Genre Stash App!
 
-![A completed game of Connect Four on a 7x6 board between pancakes and waffles.](./assets/screenshot.png)
+![An app.](/assets/screenshot.png)
 
 
 The "Genre Stash App" was created with avid music lovers in mind. With the ability to build and share genre knowledge all in one place while bing able to stash your favorite genre's artists and albums on your personal profile. 
@@ -41,5 +41,5 @@ Sim Card:
 
 - [ ] Add more genre categories 
 - [ ] Dark Mode
-- [ ] Add interactive example of genre
+- [ ] Add interactive example of genres(music, video, ect...)
 - [ ] Edit like function to user profile only
