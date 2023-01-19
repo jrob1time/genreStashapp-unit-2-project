@@ -1,6 +1,6 @@
 # Genre Stash App!
 
-![An app.](/assets/screenshot.png)
+![An app to build your music genre knowledge, while keeping track of your favorite artists and albums.](/genreStashapp/public/assets/screenshot.png)
 
 
 The "Genre Stash App" was created with avid music lovers in mind. With the ability to build and share genre knowledge all in one place while bing able to stash your favorite genre's artists and albums on your personal profile. 
