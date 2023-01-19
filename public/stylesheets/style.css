@@ -110,8 +110,9 @@ img{
 form > button {
   width: 160px;
   font-size: 18px;
-  margin-left: 35px;
-  margin: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 form * {
