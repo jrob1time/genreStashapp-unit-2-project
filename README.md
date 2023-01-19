@@ -42,3 +42,4 @@ Sim Card:
 - [ ] Dark Mode
 - [ ] Add interactive example of genres(music, video, ect...)
 - [ ] Edit like function to user profile only
+- [ ] Add app icon to navigation bar
