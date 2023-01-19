@@ -55,3 +55,10 @@ button {
     justify-content: center;
     align-items: center;
   }
+div {
+  border-color: white;
+}
+
+  .card-title {
+color: black
+  }
