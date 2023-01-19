@@ -1,66 +1,45 @@
-# MEN Stack with OAuth Template
+# Genre Stash App!
 
-This is a MEN Stack template that includes OAuth.
+![A completed game of Connect Four on a 7x6 board between pancakes and waffles.](./assets/screenshot.png)
 
-Use this to go build things! 🚀
 
-## To Use This Template
+The "Genre Stash App" was created with avid music lovers in mind. With the ability to build and share genre knowledge all in one place while bing able to stash your favorite genre's artists and albums on your personal profile. 
 
-__Replace `<name-of-your-app-here>` in the commands below with the name of your app!__
+# [VIEW APP SITE HERE!](https://thegenrestashapp.fly.dev/) 💾
 
-```bash
-git clone https://github.com/SEI-Remote/men-stack-oauth-template.git <name-of-your-app-here>
-cd <name-of-your-app-here>
-```
+## Technologies Used 👨‍💻
 
-Once you are in the project directory:
+- CSS
+- JavaScript
+- HTML
+- GitHub
+- Fly.io
+- photoshop
 
-```bash
-rm -rf .git
-```
+## [Planning Doc](https://trello.com/invite/b/IkxjAxyx/ATTI762609a28ea0ae0a98384040907fca6e68DDEBBC/genre-stash-unit-2-project) 🗒️
 
-Here's what your command line output should like after this step (note that the indicator that we are in a git repository is gone!)
+## Credits & Attributions 🙏
 
-<img src="https://i.imgur.com/L47kNOZ.png" alt="The command line before and after running the rm -rf .git command. Before git:(main) is visible indiating that the directory contains a git repository, after the command it is not.">
+While the below disclaimers are technically required by their license-holders I would like to also sincerely thank all the creators whose work makes this site look great. Thank you!
 
-Re-initialize a git repository:
+The "Genre Stash App" uses the google font family of "Robot".
+- 'Roboto', sans-serif; @900
 
-```bash
-git init
-```
+The Icon was provided as follows:
 
-Create a repo for this project on GitHub and add that remote to your project with `git remote add origin Your-repo-URL-here`.
+Sim Card: 
+"https://fontawesome.com/icons/hard-drive?s=regular&f=classic"
 
-Run npm i to fetch the template's dependencies:
+## Recent Changes 👏
 
-```bash
-npm i
-```
+- Rework the icon placement for a more clean look on the home page.
+- Delete redundant css.
+- Optimize display: flex; for overall layout and responsiveness.
+- Delete redundant javascript.
 
-touch a .env file:
+## Ice Box 🍧
 
-```bash
-touch .env
-```
-
-Fill it with the following:
-
-```
-DATABASE_URL=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-GOOGLE_CLIENT_ID=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-GOOGLE_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-SESSION_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-
-Replace the `DATABASE_URL`, `GOOGLE_CLIENT_ID`, `GOOGLE_SECRET`, and `SESSION_SECRET` with values that you provide.
-
-Delete this `README.md` file and finally, make an initial commit:
-
-```bash
-git add .
-git commit -m "initial commit"
-git push -u origin main
-```
-
-You're done!
-# genreStashapp-unit-2-project
+- [ ] Add more genre categories 
+- [ ] Dark Mode
+- [ ] Add interactive example of genre
+- [ ] Edit like function to user profile only
