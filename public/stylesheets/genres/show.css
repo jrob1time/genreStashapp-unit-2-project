@@ -1,0 +1,19 @@
+h1 {
+font-size:xxx-large;
+border-radius: 50px;
+margin: 6px;
+align-items: center;
+text-align: center;
+}
+
+h2 {
+  font-size:xx-large;
+  border-radius: 50px;
+  margin: 6px;
+  align-items: center;
+  text-align: center;
+  }
+
+  label {
+    align-items: center;
+  }
