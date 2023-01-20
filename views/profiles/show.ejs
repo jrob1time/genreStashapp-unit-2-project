@@ -33,9 +33,9 @@
     <h2>
       <%= isSelf ? "You have" : `${profile.name} has` %> Genres! Here they are!
     </h2>
-    <% profile.artists.forEach(artist => { %>
+    <% profile.artists?.forEach(artist => { %>
       <h3>
-        <p> 
+        <p>
           <li>Genre: <%= artist.name %></li>
           <li>Artist Reference: <%= artist.artistReference%></li>
           <li>Album Reference: <%= artist.albumReference %></li>
@@ -48,6 +48,13 @@
           >
           <button type="submit">Delete <%= artist.name %></button>
         </form>
+        <form 
+        action="/profiles/artists/<%= artist._id %>?_method=EDIT" 
+        method="POST"
+        style="display: inline-block;"
+      >
+      <button type="submit">Edit <%= artist.name %></button>
+    </form>
         <% } %>
       </h3>
     <% }) %>
@@ -59,4 +66,3 @@
 </main>
 
 <%- include('../partials/footer') %>
-

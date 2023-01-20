@@ -65,9 +65,10 @@ function deleteArtist(req, res) {
   })
 }
 
+
 export {
   index,
   show,
   createArtist,
-  deleteArtist
+  deleteArtist,
 }
