@@ -31,6 +31,7 @@ Sim Card:
 
 ## Recent Changes 👏
 
+
 - Rework the icon placement for a more clean look on the home page.
 - Delete redundant css.
 - Optimize display: flex; for overall layout and responsiveness.
