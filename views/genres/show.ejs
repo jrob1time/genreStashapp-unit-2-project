@@ -24,11 +24,12 @@
       </form>
       <a href="/genres/<%= genre._id %>/comments/<%= comment._id %>/edit" class="btn">Update</a>
     </p> 
-  <% }) %>
+ 
   <form action="/genres/<%= genre._id %>/comments" method="POST">
     <textarea name="content"></textarea><br>
     <button>Add Realted Artists</button>
   </form>
+  <% }) %>
     <form 
       action="/genres/<%= genre._id %>/flip-liked?_method=PATCH"
       method="POST"
