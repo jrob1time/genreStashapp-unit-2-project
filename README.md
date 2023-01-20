@@ -14,6 +14,9 @@ The "Genre Stash App" was created with avid music lovers in mind. With the abili
 - GitHub
 - Fly.io
 - photoshop
+- Express
+- MonogDB
+- Mongoose
 
 ## [Planning Doc](https://trello.com/invite/b/IkxjAxyx/ATTI762609a28ea0ae0a98384040907fca6e68DDEBBC/genre-stash-unit-2-project) 🗒️
 
