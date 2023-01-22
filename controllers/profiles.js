@@ -65,10 +65,55 @@ function deleteArtist(req, res) {
   })
 }
 
+function editArtist(req, res) {
+  Profile.findById(req.params.profileId)
+  .then(profile => {
+    const artist = profile.artists.id(req.params.artistId)
+    if (artist.artister.equals(req.user.profile._id)) {
+      res.render('profiles/editartist', {
+        profile, 
+        artist,
+        title: 'Update Artist'
+      })
+    } else {
+      throw new Error('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/profiles')
+  })
+}
+
+function updateArtist(req, res) {
+  Profile.findById(req.params.profileId)
+  .then(profile => {
+    const artist = profile.artists.id(req.params.artistId)
+    if (artist.artister.equals(req.user.profile._id)) {
+      artist.set(req.body)
+      profile.save()
+      .then(() => {
+        res.redirect(`/profiles/${profile._id}`)
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/profiles')
+      })
+    } else {
+      throw new Error('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/profiles')
+  })
+}
 
 export {
   index,
   show,
   createArtist,
   deleteArtist,
+  editArtist,
+  updateArtist
 }

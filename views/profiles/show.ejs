@@ -48,9 +48,8 @@
           >
           <button type="submit">Delete <%= artist.name %></button>
         </form>
-        <form 
-        action="/profiles/artists/<%= artist._id %>?_method=EDIT" 
-        method="POST"
+       <form 
+         action="/profiles/<%=profile._id%>/artists/<%= artist._id%>/edit"
         style="display: inline-block;"
       >
       <button type="submit">Edit <%= artist.name %></button>

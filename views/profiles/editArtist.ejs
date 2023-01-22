@@ -3,23 +3,24 @@
 
 <section>
   <h1>Edit your reference!</h1>
-  <% profile.artists?.forEach(artist => { %>
+  <% if (isSelf) { %>
+  <form 
+  action="/profiles/<%= profile._id %>/artists/<%= artist._id %>?_method=PUT"
+  method="POST"
+>
+    <% profile.artists?.forEach(artist => { %>
     <h3>
       <p>
         <li>Genre: <%= artist.name %></li>
         <li>Artist Reference: <%= artist.artistReference%></li>
         <li>Album Reference: <%= artist.albumReference %></li>
       </p>
-      <% if (isSelf) { %> 
-      <form 
-      action="/profiles/artists/<%= artist._id %>?_method=UPDATE" 
-      method="POST"
-      style="display: inline-block;"
-    >
+     
     <button type="submit">Update <%= artist.name %></button>
   </form>
-      <% } %>
-  <% }) %>
+    
+    <% }) %>
+  <% } %>
 </section>
 
 <%- include('../partials/footer') %>
